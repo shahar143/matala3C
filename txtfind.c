@@ -1,10 +1,6 @@
 //
-
 // Created by shahar on 12/22/22.
-
 //
-
-
 
 #include "txtfind.h"
 #include <stdio.h>
