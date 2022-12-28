@@ -13,7 +13,7 @@ int get_line(char* s){
     int counter = 0;
     while(counter < LINE){
         int temp = getchar();
-        if(temp == '\n' || temp == '\r'){
+        if(temp == '\n'){
             break;
         }
         s[counter] = temp;
@@ -31,7 +31,7 @@ int get_word(char* word){
     int counter = 0;
     while(counter < WORD){
         int temp = getchar();
-        if(temp == '\n' || temp == ' ' || temp == '\t' || temp == '\r'){
+        if(temp == '\n' || temp == ' ' || temp == '\t'){
             break;
         }
         word[counter] = temp;
