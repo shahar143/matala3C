@@ -11,39 +11,33 @@
 
 int get_line(char* s){
     int counter = 0;
+    char tmp = '\0';
     while(counter < LINE){
-        int temp = getchar();
-        if(temp == '\n'){
-            break;
-        }
-        s[counter] = temp;
+        if(scanf("%c", &tmp) == EOF)
+            return 0;
+        s[counter] = tmp;
         counter++;
-        if(temp <= 0){
+        if(tmp == '\n'){
             s[counter - 1] = '\0';
-            return -1;
+            return counter;
         }
     }
-    s[counter] = '\0';
     return counter;
 }
 
 int get_word(char* word){
     int counter = 0;
+    char tmp = '\0';
     while(counter < WORD){
-        int temp = getchar();
-        if(temp == '\n' || temp == ' ' || temp == '\t'){
-            break;
-        }
-        word[counter] = temp;
+        if(scanf("%c", &tmp) == EOF)
+            return 0;
+        word[counter] = tmp;
         counter++;
-
-        if(temp == EOF){
-            word[counter - 1] = '\0';
-            return -1;
+        if(tmp == '\n' || tmp == ' ' || tmp == '\t'){
+            word[counter] = '\0';
+            return counter;
         }
     }
-
-    word[counter] = '\0';
     return counter;
 }
 
@@ -53,7 +47,6 @@ int sub_string(char *str1, char* str2){
     int str2_len = strlen(str2);
 
     if(str2_len == 0 && str1_len == 0) return 1;
-    if(str2_len == 0) return 1;
     if(str1_len == 0) return 0;
 
     for(int i = 0; i <= (str1_len - str2_len); i++){
@@ -99,36 +92,33 @@ int similar(char* s, char* t){
 }
 
 void print_lines(char* str){
-    char line[LINE];
-    int hasNext = 1;
-    while(hasNext) {
-        if (get_line(line) <= 0) {
-            hasNext = 0;
-        }
+    char line[LINE] = { 0 };
+    while(get_line(line) > 0) {
         if(sub_string(line, str) == 1){
-            printf("%s\n", line);
+            printf("%s", line);
         }
     }
 }
 
 void print_words(char* str){
-    char word[WORD];
+    char word[WORD] = { 0 };
     while(get_word(word) > 0){
         if(similar(word, str) == 1){
-            printf("%s\n", word);
+            printf("%s", word);
         }
     }
 }
 
 int main(){
-    char string[WORD];
-    char option;
-    char blank_space;
+    char string[WORD] = { 0 };
+    char option = '\0';
+    char blank_space = '\0';
     loop:
     scanf("%s %c%c", string, &option, &blank_space);
     if(option == 'a'){
         getchar();
         print_lines(string);
+        printf("\n");
     }
     else if(option == 'b'){
         getchar();
