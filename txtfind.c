@@ -196,6 +196,7 @@ void print_lines(char* str){
 
     while(get_line(line) > 0) {
         if(sub_string(line, str) == 1){
+            *(line + strlen(line) - 1) = '\0';
             if (firstLine == 1) {
                 firstLine = 0;
                 printf("%s", line);
