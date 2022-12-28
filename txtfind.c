@@ -15,12 +15,12 @@ int get_line(char* s){
     while(counter < LINE){
         if(scanf("%c", &tmp) == EOF)
             return 0;
+        if(tmp == '\n'){
+            s[counter] = '\0';
+            return 0;
+        }
         s[counter] = tmp;
         counter++;
-        if(tmp == '\n'){
-            s[counter - 1] = '\0';
-            return counter;
-        }
     }
     return counter;
 }
