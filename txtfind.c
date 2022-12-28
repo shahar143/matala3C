@@ -33,7 +33,7 @@ int get_line(char* s){
             break;
         }
     }
-
+    return counter;
 }
 
 
