@@ -202,10 +202,6 @@ void print_lines(char* str){
 
     }
 
-
-
-    printf("\n");
-
 }
 
 
