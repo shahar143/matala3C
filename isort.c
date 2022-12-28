@@ -3,6 +3,7 @@
 //
 
 #include "isort.h"
+#include <stdio.h>
 
 void shift_element(int* arr, int i) {
     int j2;
@@ -28,6 +29,17 @@ void insertion_sort(int* arr, int arr_len){
         shift_element(ptr, counter);
         *(arr + i - counter) = value;
     }
+}
+
+int main(){
+    int array[50];
+    for(int i = 0; i < 50; i++)
+        scanf("%d", &array[i]);
+    insertion_sort(array, 50);
+    for(int i = 0; i < 50; i++)
+        printf("%d ", array[i]);
+    printf("\n");
+    return 0;
 }
 
 

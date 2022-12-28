@@ -1,6 +1,8 @@
-.PHONY: clean
+.PHONY: all clean
 COMPILER = gcc
 FLAGS = -Wall -g
+
+all: isort txtfind
 
 isort: isort.o isort.h
 	$(COMPILER) $(FLAGS) isort.o -o isort
