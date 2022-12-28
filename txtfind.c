@@ -34,7 +34,7 @@ int get_word(char* word){
         word[counter] = tmp;
         counter++;
         if(tmp == '\n' || tmp == ' ' || tmp == '\t'){
-            word[counter] = '\0';
+            word[counter - 1] = '\0';
             return counter;
         }
     }
@@ -123,6 +123,7 @@ int main(){
     else if(option == 'b'){
         getchar();
         print_words(string);
+        printf("\n");
     }
     else{
         printf("choose a or b\n");
