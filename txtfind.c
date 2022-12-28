@@ -106,7 +106,7 @@ void print_words(char* str){
     char word[WORD] = { 0 };
     while(get_word(word) > 0){
         if(similar(word, str) == 1){
-            printf("%s\n", word);
+            printf("%s", word);
         }
     }
 }
