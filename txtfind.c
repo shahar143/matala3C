@@ -192,12 +192,19 @@ void print_lines(char* str){
 
     char line[LINE] = { 0 };
 
+    int firstLine = 1;
+
     while(get_line(line) > 0) {
 
         if(sub_string(line, str) == 1){
 
-            printf("%s\n", line);
-
+            if (firstLine == 1) {
+                firstLine = 0;
+                printf("%s", line);
+            }
+            else {
+                printf("\n%s", line);
+            }
         }
 
     }
