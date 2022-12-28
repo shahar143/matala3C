@@ -129,7 +129,6 @@ int main(){
     if(option == 'a'){
         getchar();
         print_lines(string);
-        printf("\n"); 
     }
     else if(option == 'b'){
         getchar();
