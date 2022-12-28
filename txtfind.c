@@ -118,12 +118,10 @@ int main(){
     if(option == 'a'){
         getchar();
         print_lines(string);
-        printf("\n");
     }
     else if(option == 'b'){
         getchar();
         print_words(string);
-        printf("\n");
     }
     else{
         printf("choose a or b\n");
