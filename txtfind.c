@@ -23,8 +23,6 @@ int get_line(char* s){
             s[counter] = tmp;
             counter++;
         }
-        s[counter] = tmp;
-        counter++;
     }
     return counter;
 }
