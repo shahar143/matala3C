@@ -36,9 +36,9 @@ int main(){
     for(int i = 0; i < 50; i++)
         scanf("%d", &array[i]);
     insertion_sort(array, 50);
-    for(int i = 0; i < 50; i++)
-        printf("%d ", array[i]);
-    printf("\n");
+    for(int i = 0; i < 49; i++)
+        printf("%d,", array[i]);
+    printf("%d\n", array[49]);
     return 0;
 }
 
