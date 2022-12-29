@@ -97,11 +97,7 @@ int similar(char* s, char* t){
         strncpy(merged_string, s, i);
         strncpy(stprt, s + i + 1, strlen(s) -i);
         strcat(merged_string, stprt);
-        if(!(strcmp(t, merged_string))){
-            free(stprt);
-            free(merged_string);
-            return 1;
-        }
+        if(!(strcmp(t, merged_string))) return 1;
         free(stprt);
         free(merged_string);
     }
